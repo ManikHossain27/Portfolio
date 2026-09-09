@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('pf-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<title>Manik Hossain | Software QA Engineer</title>
+<meta name="description" content="Portfolio of Manik Hossain, a Software QA Engineer specializing in Manual, Automation, API, and Performance Testing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial, sans-serif' font-weight='700' fill='%2338e0d8' text-anchor='middle'%3EMH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="logo">MH<span class="logo-dot">.</span></a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="#about" class="nav-link" data-bn="পরিচিতি">About</a></li>
+        <li><a href="#experience" class="nav-link" data-bn="অভিজ্ঞতা">Experience</a></li>
+        <li><a href="#skills" class="nav-link" data-bn="দক্ষতা">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-bn="প্রজেক্ট">Projects</a></li>
+        <li><a href="#education" class="nav-link" data-bn="শিক্ষা">Education</a></li>
+        <li><a href="#research" class="nav-link" data-bn="গবেষণা">Research</a></li>
+        <li><a href="#blog" class="nav-link" data-bn="ব্লগ">Blog</a></li>
+        <li><a href="#contact" class="nav-link" data-bn="যোগাযোগ">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Switch theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="lang-toggle" aria-label="Switch language">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" stroke-linecap="round"/></svg>
+        <span data-lang-label>বাংলা</span>
+      </button>
+      <a href="assets/Resume-Manik-Hossain.pdf" class="btn btn-outline btn-small header-cta" download data-bn="রেজিউমে">Resume</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+    <ul>
+      <li><a href="#about" class="nav-link" data-bn="পরিচিতি">About</a></li>
+      <li><a href="#experience" class="nav-link" data-bn="অভিজ্ঞতা">Experience</a></li>
+      <li><a href="#skills" class="nav-link" data-bn="দক্ষতা">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-bn="প্রজেক্ট">Projects</a></li>
+      <li><a href="#education" class="nav-link" data-bn="শিক্ষা">Education</a></li>
+      <li><a href="#research" class="nav-link" data-bn="গবেষণা">Research</a></li>
+      <li><a href="#blog" class="nav-link" data-bn="ব্লগ">Blog</a></li>
+      <li><a href="#contact" class="nav-link" data-bn="যোগাযোগ">Contact</a></li>
+      <li><a href="assets/Resume-Manik-Hossain.pdf" class="btn btn-primary btn-small" download data-bn="রেজিউমে ডাউনলোড">Download Resume</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text reveal">
+        <p class="eyebrow" data-bn="সফটওয়্যার QA ইঞ্জিনিয়ার">Software QA Engineer</p>
+        <h1 data-i18n-html data-bn="হাই, আমি <span class=&quot;accent&quot;>মানিক হোসেন</span>।<br>আমি প্রতিটি রিলিজে কোয়ালিটি গেঁথে দিই।">Hi, I'm <span class="accent">Manik Hossain</span>.<br>I build quality into every release.</h1>
+        <p class="hero-lede" data-i18n-html data-bn="SaaS, ERP, পে-রোল, e-commerce আর সরকারি প্ল্যাটফর্ম টেস্ট করার ৪+ বছরের অভিজ্ঞতাসম্পন্ন QA ইঞ্জিনিয়ার। আমি <strong>Selenium</strong> ও <strong>Playwright</strong> দিয়ে শূন্য থেকে অটোমেশন ফ্রেমওয়ার্ক তৈরি করি, নির্ভরযোগ্যতা ও নিরাপত্তার জন্য API শক্তিশালী করি, আর প্রোডাকশন ডিফেক্ট লিকেজ ২%-এর নিচে রাখি।">
+          QA Engineer with 4+ years of experience testing SaaS, ERP, payroll, e-commerce, and government
+          platforms. I build automation frameworks from scratch with <strong>Selenium</strong> &amp;
+          <strong>Playwright</strong>, harden APIs for reliability and security, and keep production defect
+          leakage under 2%.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" data-bn="প্রজেক্ট দেখুন">View Projects</a>
+          <a href="assets/Resume-Manik-Hossain.pdf" class="btn btn-outline" download data-bn="রেজিউমে ডাউনলোড">Download Resume</a>
+          <a href="#contact" class="btn btn-ghost" data-bn="যোগাযোগ করুন">Contact Me</a>
+        </div>
+        <div class="hero-socials" aria-label="Social links">
+          <a href="https://github.com/ManikHossain27" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/manik27" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="mailto:manik.hossain2706@gmail.com" aria-label="Send email">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2.5 7.8 5.86L19.8 6H4.2zM20 8.24l-7.4 5.56a1 1 0 0 1-1.2 0L4 8.24V18.5c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V8.24z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap reveal">
+        <div class="hero-photo-frame">
+          <img src="assets/profile.jpg" alt="Portrait of Manik Hossain" data-bn-alt="মানিক হোসেনের প্রতিকৃতি" class="hero-photo" width="315" height="315">
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-num">4+</span>
+          <span class="hero-badge-label" data-bn="বছরের QA অভিজ্ঞতা">Years in QA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY METRICS -->
+  <section class="metrics-section">
+    <div class="container">
+      <div class="metrics-head reveal">
+        <p class="metrics-title" data-bn="মূল পরিসংখ্যান">Key Metrics</p>
+        <span class="metrics-underline"></span>
+      </div>
+      <div class="metrics-grid reveal">
+        <div class="metric-card">
+          <svg class="metric-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18" stroke-linecap="round"/></svg>
+          <span class="metric-num">4+</span>
+          <span class="metric-label" data-bn="বছরের অভিজ্ঞতা">Years of Experience</span>
+        </div>
+        <div class="metric-card">
+          <svg class="metric-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18" stroke-linecap="round"/></svg>
+          <span class="metric-num">3</span>
+          <span class="metric-label" data-bn="যত প্রতিষ্ঠানে কাজ করেছি">Companies Worked With</span>
+        </div>
+        <div class="metric-card">
+          <svg class="metric-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6h11M9 12h11M9 18h11" stroke-linecap="round"/><path d="M4 6l1.5 1.5L7.5 5M4 12l1.5 1.5L7.5 11M4 18l1.5 1.5L7.5 16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="metric-num">19</span>
+          <span class="metric-label" data-bn="টেস্ট করা প্রজেক্ট">Projects Tested</span>
+        </div>
+        <div class="metric-card">
+          <svg class="metric-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="metric-num">7</span>
+          <span class="metric-label" data-bn="তৈরি করা অটোমেশন ফ্রেমওয়ার্ক">Automation Frameworks Built</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-bn="আমার সম্পর্কে">About Me</p>
+      <h2 class="section-title reveal" data-bn="কোয়ালিটিকে অগ্রাধিকার দেওয়া ইঞ্জিনিয়ার, স্প্রিন্টে পরীক্ষিত।">Quality-first engineer, sprint-tested.</h2>
+      <div class="about-grid">
+        <div class="about-text-wrap reveal">
+          <p class="about-text" data-bn="আমি একজন সফটওয়্যার QA ইঞ্জিনিয়ার, SaaS, ERP, পে-রোল, e-commerce আর সরকারি প্ল্যাটফর্ম জুড়ে ৪+ বছরের সরাসরি অভিজ্ঞতাসম্পন্ন। আমি Selenium (Python/Java) আর Playwright দিয়ে শূন্য থেকে অটোমেশন ফ্রেমওয়ার্ক তৈরি করেছি, যোগ দেওয়া প্রতিটি টিমে রিগ্রেশন এক্সিকিউশনের সময় কমিয়েছি আর টেস্ট কভারেজ বাড়িয়েছি।">
+            I'm a Software QA Engineer with 4+ years of hands-on experience across SaaS, ERP, Payroll,
+            e-commerce, and government platforms. I've built automation frameworks from scratch using Selenium
+            (Python/Java) and Playwright, cutting regression execution time and raising test coverage on every
+            team I've joined.
+          </p>
+          <p class="about-text" data-bn="আমার গভীরতম ডোমেইন অভিজ্ঞতা পে-রোল আর ERP সিস্টেমে: লাইভ পে-রোল প্ল্যাটফর্মে ফাংশনাল ও রিগ্রেশন টেস্টিং চালানো, JMeter লোড ও স্ট্রেস টেস্টিংয়ের মাধ্যমে ১,০০০+ সমসাময়িক ইউজারের নিচে পারফরম্যান্স যাচাই করা, আর আমি যে সিস্টেমগুলো টেস্ট করেছি সেগুলোতে ক্লায়েন্ট টিমকে প্রশিক্ষণ দেওয়া, যা গ্রহণযোগ্যতা বাড়িয়েছে আর সাপোর্ট রিকোয়েস্ট কমিয়েছে। আমি রিকোয়ারমেন্ট বিশ্লেষণ ও টেস্ট পরিকল্পনা থেকে শুরু করে CI/CD-সংযুক্ত API ও পারফরম্যান্স টেস্টিং পর্যন্ত শুরু থেকে শেষ পর্যন্ত স্বচ্ছন্দে কাজ করি, আর একজন Associate PM-এর ভূমিকাতেও নেমেছি, টিম জুড়ে স্প্রিন্ট পরিকল্পনা ও ক্লায়েন্ট যোগাযোগ সমন্বয় করে।">
+            My deepest domain experience is in Payroll and ERP systems: running functional and regression
+            testing on live payroll platforms, validating performance under 1,000+ concurrent users through
+            JMeter load and stress testing, and training client teams on the systems I tested, which improved
+            adoption and cut support requests. I work comfortably end to end, from requirement analysis and
+            test planning through CI/CD-integrated API and performance testing, and I've also stepped into an
+            Associate PM role, coordinating sprint planning and client communication across teams.
+          </p>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <span class="stat-num">40%</span>
+            <span class="stat-label" data-bn="Playwright অটোমেশন দিয়ে কমানো রিগ্রেশন সময়">Regression time cut with Playwright automation</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">&lt;2%</span>
+            <span class="stat-label" data-bn="নেতৃত্ব দেওয়া প্রজেক্টে প্রোডাকশন ডিফেক্ট লিকেজ">Production defect leakage on led projects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">1,000+</span>
+            <span class="stat-label" data-bn="JMeter লোড টেস্টে যাচাই করা সমসাময়িক ইউজার">Concurrent users validated via JMeter load tests</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">20</span>
+            <span class="stat-label" data-bn="পে-রোল ও ERP টেস্টিংয়ের সরাসরি অভিজ্ঞতার মাস">Months of hands-on Payroll &amp; ERP testing experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-bn="অভিজ্ঞতা">Experience</p>
+      <h2 class="section-title reveal" data-bn="যেখানে আমি প্রভাব রেখেছি।">Where I've made an impact.</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>SQA Engineer</h3>
+              <span class="timeline-date" data-bn="সেপ্টেম্বর ২০২৪ &ndash; বর্তমান &middot; ২ বছর">Sep 2024 &ndash; Present &middot; 2 Years</span>
+            </div>
+            <p class="timeline-company">ZAAG Systems Limited</p>
+            <ul>
+              <li data-bn="রিকোয়ারমেন্ট বিশ্লেষণ করেছি, টেস্ট পরিস্থিতি প্রস্তুত করেছি, গুরুত্বপূর্ণ ত্রুটি শনাক্ত করেছি, আর সময়মতো সমাধান নিশ্চিত করতে ডেভেলপারদের সঙ্গে কাজ করেছি।">Analyzed requirements, prepared test scenarios, identified critical defects, and collaborated with developers to ensure timely resolution.</li>
+              <li data-bn="ওয়েব/মোবাইল অ্যাপ্লিকেশনের জন্য ফাংশনাল, রিগ্রেশন আর ক্রস-ব্রাউজার টেস্টিংয়ে নেতৃত্ব দিয়েছি, প্রোডাকশনে ডিফেক্ট লিকেজ ২%-এর নিচে রেখেছি।">Led Functional, Regression, and Cross-browser testing for web/mobile applications, ensuring defect leakage stayed under 2% in production.</li>
+              <li data-bn="Playwright-python দিয়ে উচ্চ-অগ্রাধিকারের ওয়ার্কফ্লো অটোমেট করেছি, রিগ্রেশন সময় ৪০% কমিয়েছি।">Automated high-priority workflows with Playwright-python, reducing regression time by 40%.</li>
+              <li data-bn="Associate Project Manager হিসেবে কাজ করেছি, ৩টি টিম জুড়ে স্প্রিন্ট পরিকল্পনা, সময়সীমা আর ক্লায়েন্ট যোগাযোগ সমন্বয় করেছি, আর সব মাইলফলক সময়মতো ডেলিভারি নিশ্চিত করেছি।">Acted as Associate Project Manager, coordinating sprint planning, timelines, and client communication across 3 teams, ensuring all milestones were delivered on schedule.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Software Quality Assurance Engineer</h3>
+              <span class="timeline-date" data-bn="মে ২০২৪ &ndash; আগস্ট ২০২৪ &middot; ৪ মাস">May 2024 &ndash; Aug 2024 &middot; 4 Months</span>
+            </div>
+            <p class="timeline-company">Kraftwerk Technologies Limited</p>
+            <ul>
+              <li data-bn="একটি স্টার্টআপ পরিবেশে QA পরিকাঠামো গড়ে তুলেছি, শূন্য থেকে টেস্ট প্রক্রিয়া সাজিয়েছি।">Established QA infrastructure in a startup environment, setting up test processes from scratch.</li>
+              <li data-bn="একটি Python-Selenium হাইব্রিড অটোমেশন ফ্রেমওয়ার্ক তৈরি করেছি, দ্রুত টেস্ট এক্সিকিউশন সম্ভব করেছি।">Developed a Python-Selenium Hybrid Automation Framework, enabling faster test execution.</li>
+              <li data-bn="স্প্রিন্ট-ভিত্তিক টেস্ট চক্র চালিয়েছি, ব্রাউজার জুড়ে ফাংশনাল, UI আর ইন্টিগ্রেশন টেস্টিং ঢেকেছি।">Executed sprint-based test cycles, covering Functional, UI, and Integration Testing across browsers.</li>
+              <li data-bn="সামগ্রিক টেস্ট কভারেজ ৩৫% বাড়িয়েছি, ক্লায়েন্ট রিলিজের আগে প্রোডাক্টের স্থিতিশীলতা উন্নত করেছি।">Increased overall test coverage by 35%, improving product stability before client releases.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Jr. SQA Engineer</h3>
+              <span class="timeline-date" data-bn="সেপ্টেম্বর ২০২২ &ndash; এপ্রিল ২০২৪ &middot; ২০ মাস">Sep 2022 &ndash; Apr 2024 &middot; 20 Months</span>
+            </div>
+            <p class="timeline-company">Continental Technologies (BD) Limited</p>
+            <ul>
+              <li data-bn="Intellectual Capital Management-এর জন্য পরিষ্কার, সংক্ষিপ্ত সিস্টেম স্পেসিফিকেশন আর বিস্তারিত টেস্ট প্ল্যান ও টেস্ট কেস লিখেছি।">Wrote clear, concise system specifications and comprehensive test plans and test cases for Intellectual Capital Management.</li>
+              <li data-bn="পে-রোল আর ERP প্রজেক্টের জন্য ফাংশনাল ও রিগ্রেশন টেস্টিং চালিয়েছি।">Executed functional and regression testing for Payroll and ERP projects.</li>
+              <li data-bn="JMeter ব্যবহার করে লোড ও স্ট্রেস টেস্টিং করেছি, ১,০০০+ সমসাময়িক ইউজার সামলানোর জন্য সিস্টেম যাচাই করেছি।">Performed Load &amp; Stress Testing using JMeter, validating systems to handle 1,000+ concurrent users.</li>
+              <li data-bn="ইউজার ম্যানুয়াল, ওয়ার্কফ্লো আর FAQ তৈরি করেছি, আর পে-রোল ও ERP প্রজেক্টে ক্লায়েন্ট টিমকে প্রশিক্ষণ দিয়েছি, যা গ্রহণযোগ্যতা বাড়িয়েছে আর সাপোর্ট রিকোয়েস্ট কমিয়েছে।">Created user manuals, workflows, and FAQs, and trained client teams on Payroll &amp; ERP projects, improving adoption and reducing support requests.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-bn="দক্ষতা">Skills</p>
+      <h2 class="section-title reveal" data-bn="যেসব টুল ও ধারণা নিয়ে কাজ করি।">Tools &amp; concepts I work with.</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3 data-bn="ম্যানুয়াল টেস্টিং">Manual Testing</h3>
+          <p class="skill-desc" data-bn="ম্যানুয়াল টেস্টিং লাইফসাইকেল শুরু থেকে শেষ পর্যন্ত সামলাই: রিকোয়ারমেন্ট বিশ্লেষণ, টেস্ট প্ল্যান ও টেস্ট কেস লেখা, আর স্প্রিন্ট চক্র জুড়ে ফাংশনাল, রিগ্রেশন, স্মোক আর ক্রস-ব্রাউজার টেস্টিং চালানো। JIRA-তে ত্রুটি ট্রায়াজ ও অগ্রাধিকার দিতে ডেভেলপারদের সঙ্গে ঘনিষ্ঠভাবে কাজ করি, প্রোডাকশন ডিফেক্ট লিকেজ ২%-এর নিচে রাখি।">Own the manual testing lifecycle end to end: analyzing requirements, writing test plans and test cases, and executing functional, regression, smoke, and cross-browser testing across sprint cycles. Partner closely with developers to triage and prioritize defects in JIRA, keeping production defect leakage under 2%.</p>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-bn="অটোমেশন ও API টুল">Automation &amp; API Tools</h3>
+          <div class="tag-list">
+            <span class="tag">Selenium (Python)</span><span class="tag">Selenium (Java)</span><span class="tag">Playwright (Python)</span>
+            <span class="tag">Pytest</span><span class="tag">TestNG</span><span class="tag">JUnit</span><span class="tag">Cucumber (Gherkin)</span>
+            <span class="tag">Postman</span><span class="tag">Newman</span><span class="tag">JMeter</span><span class="tag">Jenkins</span><span class="tag">Git</span><span class="tag">JIRA</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-bn="ভাষা ও ডেটা ফরম্যাট">Languages &amp; Data Formats</h3>
+          <div class="tag-list">
+            <span class="tag">Python</span><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Gherkin</span>
+            <span class="tag">XML</span><span class="tag">JSON</span><span class="tag">HTML5</span><span class="tag">CSS</span><span class="tag">Bootstrap</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-bn="ফ্রেমওয়ার্ক ও পদ্ধতি">Frameworks &amp; Approaches</h3>
+          <div class="tag-list">
+            <span class="tag">Page Object Model</span><span class="tag">Hybrid Framework</span><span class="tag">BDD (Cucumber)</span>
+            <span class="tag">Data-Driven</span><span class="tag">Keyword-Driven</span><span class="tag">Pytest Framework</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-bn="ডেটাবেস">Databases</h3>
+          <div class="tag-list">
+            <span class="tag">Oracle</span><span class="tag">MySQL</span><span class="tag">SQL Server</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-bn="ধারণা">Concepts</h3>
+          <div class="tag-list">
+            <span class="tag">SDLC</span><span class="tag">STLC</span><span class="tag">Agile</span><span class="tag">Waterfall</span>
+            <span class="tag">Defect Lifecycle</span><span class="tag">Test Design Techniques</span><span class="tag">OOP Principles</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-bn="QA-র জন্য জেনারেটিভ AI">Generative AI for QA</h3>
+          <div class="tag-list">
+            <span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">GitHub Copilot</span><span class="tag">MCP Servers</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-bn="OS ও IDE">OS &amp; IDEs</h3>
+          <div class="tag-list">
+            <span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">macOS</span>
+            <span class="tag">PyCharm</span><span class="tag">IntelliJ</span><span class="tag">VS Code</span><span class="tag">Eclipse</span><span class="tag">Postman</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-bn="প্রজেক্ট">Projects</p>
+      <h2 class="section-title reveal" data-bn="যা টেস্ট করেছি ও তৈরি করেছি।">What I've tested &amp; built.</h2>
+
+      <h3 class="projects-subhead reveal" data-i18n-html data-bn="মূল প্রজেক্ট <span>কর্পোরেট অভিজ্ঞতা</span>">Key Projects <span>Corporate Experience</span></h3>
+      <div class="project-grid reveal">
+        <a class="project-card project-card-link project-card-detailed" href="https://play.google.com/store/apps/details?id=com.ooroh.labbayk&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+          <h4>Labbaik <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p class="project-meta" data-bn="বাংলাদেশ সরকার &middot; হজযাত্রী সহায়তা অ্যাপ">Government of Bangladesh &middot; Hajj Pilgrim Support App</p>
+          <p data-bn="হজযাত্রী ও তাঁদের পরিবারকে যাত্রার শুরু থেকে নিরাপদে ঘরে ফেরা পর্যন্ত পুরো সময় সহায়তা দিতে তৈরি একটি সরকারি অ্যাপ।">An official government app built to support Hajj pilgrims and their families throughout the pilgrimage journey, from pre-departure preparation to a safe return home.</p>
+          <ul class="project-detail-list">
+            <li data-bn="হজযাত্রীমুখী ফিচার ঢেকেছি: SOS জরুরি সতর্কতা, ফ্লাইট ও ভ্রমণ তথ্য, নামাজের সময়, আবহাওয়া, Quran/Hadith লাইব্রেরি, Qibla দিক, ডিজিটাল Tasbih, আর Hajj/Umrah গাইড।">Covered pilgrim-facing features: SOS emergency alerts, flight &amp; travel details, prayer times, weather, Quran/Hadith library, Qibla direction, digital Tasbih, and Hajj/Umrah guides.</li>
+            <li data-bn="পরিবার-সংযুক্ত অ্যাক্সেস ফিচার যাচাই করেছি, যা তিনজন পর্যন্ত পরিবারের সদস্যকে দূর থেকে একজন হজযাত্রীর যাত্রা ট্র্যাক করতে দেয়।">Validated the family-linked access feature, letting up to three family members track a pilgrim's journey remotely.</li>
+            <li data-bn="হজযাত্রীর মোবাইল অ্যাপ আর অ্যাডমিন প্যানেল দুটোতেই শুরু থেকে শেষ পর্যন্ত QA সামলেছি, ফাংশনাল, রিগ্রেশন, UI/UX আর API টেস্টিং ঢেকে।">Owned QA end-to-end across both the pilgrim mobile app and the admin panel, covering functional, regression, UI/UX, and API testing.</li>
+          </ul>
+        </a>
+        <a class="project-card project-card-link project-card-detailed" href="https://www.apexfootwearltd.com/" target="_blank" rel="noopener noreferrer">
+          <h4>Apex Footwear <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p class="project-meta" data-bn="Apex Footwear Limited &middot; জুতা প্রস্তুতকারক ও রপ্তানিকারক">Apex Footwear Limited &middot; Footwear Manufacturer &amp; Exporter</p>
+          <p data-bn="১৯৯০ সালে প্রতিষ্ঠিত একটি বাংলাদেশি জুতা প্রস্তুতকারক ও রপ্তানিকারক, যারা উত্তর আমেরিকা, লাতিন আমেরিকা, EU আর জাপান জুড়ে বৈশ্বিক ব্র্যান্ডে সরবরাহ করে, পাশাপাশি বাংলাদেশে একটি বাজার-শীর্ষ অভ্যন্তরীণ খুচরা ব্যবসা চালায়।">A Bangladeshi footwear manufacturer and exporter established in 1990, supplying global brands across North America, Latin America, the EU, and Japan, alongside a market leading domestic retail business in Bangladesh.</p>
+          <ul class="project-detail-list">
+            <li data-bn="আরেকজন ইঞ্জিনিয়ারের সঙ্গে QA-র দায়িত্ব ভাগ করে নিয়েছি, রিলিজ চক্রের সঙ্গে তাল মেলাতে এক্সপোর্ট, ডোমেস্টিক আর সাস্টেইনেবিলিটি অংশ জুড়ে টেস্ট কভারেজ ভাগ করেছি।">Shared ownership of the QA effort with a second engineer, dividing test coverage across the export, domestic, and sustainability sections to keep pace with release cycles.</li>
+            <li data-bn="প্ল্যাটফর্ম জুড়ে ফাংশনাল, রিগ্রেশন আর ইন্টিগ্রেশন টেস্টিং করেছি।">Performed functional, regression, and integration testing across the platform.</li>
+            <li data-bn="ব্যাকএন্ড ওয়ার্কফ্লো আর ডেটার নির্ভুলতা যাচাই করতে API টেস্টিং চালিয়েছি।">Ran API testing to validate backend workflows and data integrity.</li>
+            <li data-bn="এক্সপোর্ট, ডোমেস্টিক আর ইনভেস্টর রিলেশনস অংশ জুড়ে UI/UX-এর সামঞ্জস্য যাচাই করেছি।">Validated UI/UX consistency across the export, domestic, and investor relations sections.</li>
+          </ul>
+        </a>
+        <a class="project-card project-card-link project-card-detailed" href="https://mumuso.com.bd/" target="_blank" rel="noopener noreferrer">
+          <h4>Mumuso Bangladesh <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p class="project-meta" data-bn="MUMUSO BD &middot; সাশ্রয়ী বিউটি ও লাইফস্টাইল E-commerce">MUMUSO BD &middot; Affordable Beauty &amp; Lifestyle E-commerce</p>
+          <p data-bn="একটি e-commerce প্ল্যাটফর্ম যা ২০০+ ক্যাটাগরি জুড়ে সাশ্রয়ী বিউটি, অ্যাকসেসরিজ, ব্যাগ, হোম আর শিশুদের পণ্য বিক্রি করে, ওয়েব ও মোবাইল জুড়ে কার্ড, bKash আর Nagad পেমেন্ট সাপোর্টসহ।">An e-commerce platform selling budget friendly beauty, accessories, bags, home, and kids products across 200+ categories, with card, bKash, and Nagad payment support across web and mobile.</p>
+          <ul class="project-detail-list">
+            <li data-bn="প্রজেক্টের একমাত্র লিড QA, ওয়েবসাইট, Android অ্যাপ, iOS অ্যাপ আর অ্যাডমিন প্যানেল জুড়ে টেস্ট কৌশল, পরিকল্পনা আর এক্সিকিউশন শুরু থেকে শেষ পর্যন্ত সামলেছি।">Sole lead QA on the project, owning test strategy, planning, and execution end to end across the website, Android app, iOS app, and admin panel.</li>
+            <li data-bn="ক্যাটালগ, কার্ট, চেকআউট আর পেমেন্ট গেটওয়ে ফ্লো জুড়ে ফাংশনাল, রিগ্রেশন আর API টেস্টিং করেছি।">Performed functional, regression, and API testing across catalog, cart, checkout, and payment gateway flows.</li>
+            <li data-bn="ওয়েবসাইটের সঙ্গে ফিচার মিল আছে কিনা তা যাচাই করতে Android আর iOS অ্যাপ টেস্ট করেছি, দুই প্ল্যাটফর্মেই ফাংশনাল, রিগ্রেশন আর UI/UX টেস্টিং ঢেকে।">Tested the Android and iOS apps for feature parity with the website, covering functional, regression, and UI/UX testing on both platforms.</li>
+            <li data-bn="AI Skin Scan ব্যক্তিগতকৃত সুপারিশ ফিচার আর মেম্বার/লয়ালটি সুবিধার ফ্লো যাচাই করেছি।">Validated the AI Skin Scan personalized recommendation feature and member/loyalty perks flows.</li>
+            <li data-bn="প্রতিটি রিলিজের আগে ত্রুটি ট্রায়াজ ও ফিক্সের অগ্রাধিকার ঠিক করতে ক্লায়েন্টের সঙ্গে সরাসরি সমন্বয় করেছি।">Coordinated directly with the client to triage defects and prioritize fixes ahead of each release.</li>
+          </ul>
+        </a>
+        <a class="project-card project-card-link project-card-detailed" href="https://play.google.com/store/apps/details?id=sa.drwash.www&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+          <h4>Dr. Wash <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p class="project-meta" data-bn="সৌদি আরব &middot; অন ডিমান্ড কার ওয়াশ সেবা">Saudi Arabia &middot; On Demand Car Wash Service</p>
+          <p data-bn="সৌদি আরবভিত্তিক একটি কোম্পানি যা পুরো অঞ্চল জুড়ে অন ডিমান্ড কার ওয়াশ সেবা দেয়, একটি কাস্টমার অ্যাপ, একটি টেকনিশিয়ান অ্যাপ আর একটি অ্যাডমিন ব্যাকএন্ড নিয়ে।">A Saudi Arabia based company offering on demand car wash service across the region, spanning a customer app, a technician facing app, and an admin backend.</p>
+          <ul class="project-detail-list">
+            <li data-bn="তিনটি অংশ জুড়ে স্বাধীনভাবে QA সামলেছি: Dr. Wash কাস্টমার অ্যাপ, ফিল্ড সেবা প্রদানকারীদের ব্যবহৃত Dr. Biker টেকনিশিয়ান অ্যাপ, আর অ্যাডমিন প্যানেল।">Independently owned QA across three surfaces: the Dr. Wash customer app, the Dr. Biker technician app used by field service providers, and the admin panel.</li>
+            <li data-bn="কাস্টমার আর টেকনিশিয়ান অ্যাপের Android আর iOS দুই বিল্ডই টেস্ট করেছি।">Tested both the Android and iOS builds of the customer and technician apps.</li>
+            <li data-bn="বুকিং, শিডিউলিং আর সেবা সম্পন্ন হওয়ার ফ্লো জুড়ে ফাংশনাল, রিগ্রেশন, API আর UI/UX টেস্টিং করেছি।">Performed functional, regression, API, and UI/UX testing across booking, scheduling, and service completion flows.</li>
+            <li data-bn="অ্যাডমিন প্যানেল টেস্টিং সামলেছি আর রিলিজ নিয়ে ক্লায়েন্টের সঙ্গে সরাসরি সমন্বয় করেছি।">Handled admin panel testing and coordinated directly with the client on releases.</li>
+          </ul>
+        </a>
+        <a class="project-card project-card-link project-card-detailed" href="https://www.os-pharmacy.com/" target="_blank" rel="noopener noreferrer">
+          <h4>OS Pharmacy <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p class="project-meta" data-bn="ফার্মেসি ম্যানেজমেন্ট সিস্টেম &middot; বাংলাদেশ বাজার">Pharmacy Management System &middot; Bangladesh Market</p>
+          <p data-bn="বাংলাদেশি ওষুধের বাজারের জন্য তৈরি একটি ফার্মেসি ম্যানেজমেন্ট সিস্টেম, একটি স্থানীয় ওষুধ ও জেনেরিক নামের ডেটাবেসসহ, ওয়েব, Android আর iOS জুড়ে পাওয়া যায়।">A pharmacy management system built for the Bangladeshi medicine market, with a local medicine and generic name database, available across web, Android, and iOS.</p>
+          <ul class="project-detail-list">
+            <li data-bn="ইনভেন্টরি মডিউল টেস্ট করেছি: স্টক ট্র্যাকিং, স্থানীয় ওষুধের ডেটাবেস, আর বারকোড তৈরি ও ছাপানো।">Tested the inventory module: stock tracking, the local medicine database, and barcode generation and printing.</li>
+            <li data-bn="পারচেজ মডিউল টেস্ট করেছি: ভেন্ডর ম্যানেজমেন্ট আর স্টক পুনঃপূরণের ওয়ার্কফ্লো।">Tested the purchase module: vendor management and stock replenishment workflows.</li>
+            <li data-bn="সেলস মডিউল টেস্ট করেছি: পয়েন্ট অফ সেল বিক্রয় ফ্লো আর কাস্টমার ম্যানেজমেন্ট।">Tested the sales module: point of sale selling flows and customer management.</li>
+            <li data-bn="অ্যাকাউন্টস মডিউল টেস্ট করেছি: পেছনের হিসাব ব্যবস্থা আর ব্যবসায়িক রিপোর্টিং।">Tested the accounts module: the background accounting system and business reporting.</li>
+          </ul>
+        </a>
+        <a class="project-card project-card-link project-card-detailed" href="https://www.zaagshop.com/" target="_blank" rel="noopener noreferrer">
+          <h4>Zaagshop <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p class="project-meta" data-bn="নো-কোড E-commerce প্ল্যাটফর্ম &middot; বাংলাদেশ">No-Code E-commerce Platform &middot; Bangladesh</p>
+          <p data-bn="একটি নো-কোড e-commerce প্ল্যাটফর্ম যা বাংলাদেশি উদ্যোক্তা ও ছোট ব্যবসাকে তৈরি করা, কাস্টমাইজযোগ্য টেমপ্লেট দিয়ে নিজেদের অনলাইন স্টোর চালু করতে দেয়, ৫০০+ ব্যবসা ব্যবহার করে।">A no-code e-commerce platform that lets Bangladeshi entrepreneurs and small businesses launch their own online stores using ready made, customizable templates, used by 500+ businesses.</p>
+          <ul class="project-detail-list">
+            <li data-bn="নো-কোড টেমপ্লেট বিল্ডার জুড়ে স্টোর তৈরি ও ব্যবস্থাপনার ফ্লো টেস্ট করেছি।">Tested store creation and management flows across the no-code template builder.</li>
+            <li data-bn="SSLCommerz-এর মাধ্যমে পেমেন্ট ইন্টিগ্রেশন টেস্ট করেছি, bKash, Nagad, Rocket, কার্ড আর ক্যাশ অন ডেলিভারি ফ্লো ঢেকে।">Tested payment integration via SSLCommerz, covering bKash, Nagad, Rocket, card, and cash on delivery flows.</li>
+            <li data-bn="পণ্য ও ইনভেন্টরি ব্যবস্থাপনা, অর্ডার ট্র্যাকিং আর ডেলিভারি পার্টনার ইন্টিগ্রেশন জুড়ে ফাংশনাল, রিগ্রেশন আর UI/UX টেস্টিং করেছি।">Performed functional, regression, and UI/UX testing across product and inventory management, order tracking, and delivery partner integrations.</li>
+            <li data-bn="প্ল্যাটফর্ম জুড়ে ব্যাকএন্ড ওয়ার্কফ্লো আর ডেটার নির্ভুলতা যাচাই করতে API টেস্টিং চালিয়েছি।">Ran API testing to validate backend workflows and data integrity across the platform.</li>
+          </ul>
+        </a>
+        <a class="project-card project-card-link project-card-detailed" href="https://zaag.ai/" target="_blank" rel="noopener noreferrer">
+          <h4>ZaagAI <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p class="project-meta" data-bn="RAG-ভিত্তিক AI কাস্টমার এনগেজমেন্ট প্ল্যাটফর্ম">RAG-based AI Customer Engagement Platform</p>
+          <p data-bn="একটি অল-ইন-ওয়ান AI প্ল্যাটফর্ম যা একটি ব্যবসার নিজস্ব ডেটার (নথি, FAQ, স্প্রেডশিট আর ওয়েবসাইট) উপর প্রশিক্ষিত হয়ে WhatsApp, Facebook, Instagram, Telegram, Slack আর ওয়েবসাইট চ্যাটের মতো চ্যানেল জুড়ে চ্যাট, ভয়েস, লিড ক্যাপচার আর অ্যাপয়েন্টমেন্ট বুকিং চালায়।">An all-in-one AI platform that trains on a business's own data (documents, FAQs, spreadsheets, and websites) to power chat, voice, lead capture, and appointment booking across channels like WhatsApp, Facebook, Instagram, Telegram, Slack, and website chat.</p>
+          <ul class="project-detail-list">
+            <li data-bn="একাধিক চ্যানেল জুড়ে আপলোড করা ব্যবসায়িক ডেটার বিপরীতে RAG-ভিত্তিক চ্যাটবটের উত্তরের নির্ভুলতা আর ভিত্তি টেস্ট করেছি।">Tested the RAG-based chatbot's response accuracy and grounding against uploaded business data across multiple channels.</li>
+            <li data-bn="বুকিং ফ্লো টেস্ট করেছি, ইনটেন্ট শনাক্তকরণ, প্রাপ্যতা যাচাই আর নিশ্চিতকরণ ঢেকে।">Tested the booking flow, covering intent detection, availability checks, and confirmations.</li>
+            <li data-bn="প্যাকেজ ও সাবস্ক্রিপশন মডিউল টেস্ট করেছি, প্ল্যান আপগ্রেড, ডাউনগ্রেড আর বিলিং চক্রসহ।">Tested the package and subscription module, including plan upgrades, downgrades, and billing cycles.</li>
+            <li data-bn="সাবস্ক্রিপশন টিয়ার জুড়ে মেসেজ ব্যবহারের ট্র্যাকিং আর সীমা টেস্ট করেছি।">Tested message usage tracking and limits across subscription tiers.</li>
+            <li data-bn="রিলিজ জুড়ে মডেলের নির্ভুলতা ধারাবাহিক রাখতে রিগ্রেশন যাচাই আর API স্থিতিশীলতা টেস্টিং করেছি।">Performed regression validation and API stability testing to ensure consistent model accuracy across releases.</li>
+          </ul>
+        </a>
+      </div>
+
+      <h3 class="projects-subhead reveal" data-i18n-html data-bn="ম্যানুয়াল, API ও পারফরম্যান্স টেস্টিং <span>ওপেন সোর্স / অনুশীলন</span>">Manual, API &amp; Performance Testing <span>Open Source / Practice</span></h3>
+      <div class="project-grid reveal">
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/Test_case_Bug_report_Tes_Metrics_Mind_map" target="_blank" rel="noopener noreferrer">
+          <h4>Test Case Writing <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Walton eplaza আর Chaldal-এর জন্য ম্যানুয়াল টেস্ট সুইট, প্রজেক্ট অনুযায়ী সাজানো, টেস্ট কেস, বাগ রিপোর্ট, টেস্ট মেট্রিক আর মাইন্ড ম্যাপসহ।">Manual test suites for Walton eplaza and Chaldal, organized by project with test cases, bug reports, test metrics, and mind maps.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/Student_Details_Rest_API_Newman" target="_blank" rel="noopener noreferrer">
+          <h4>Student Details API <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="একটি স্টুডেন্ট রেকর্ড API-র সম্পূর্ণ CRUD ফ্লো ঢাকা একটি Postman কালেকশন, ডাইনামিক টেস্ট ডেটা আর Newman HTML রিপোর্টসহ।">Postman collection covering full CRUD flows for a student records API, with dynamic test data and Newman HTML reports.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/SwaggerPetstore_Rest_API_Newman" target="_blank" rel="noopener noreferrer">
+          <h4>Swagger Petstore API <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Swagger Petstore ডেমো API-র বিপরীতে একটি Postman CRUD টেস্ট সুইট, কালেকশন রানারের মাধ্যমে চালানো, Newman HTML রিপোর্টসহ।">Postman CRUD test suite against the Swagger Petstore demo API, run via the collection runner with Newman HTML reports.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/Restful-Booker-REST-API-Newman" target="_blank" rel="noopener noreferrer">
+          <h4>Restful-Booker API <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Restful-Booker সেবার জন্য CSV-চালিত ডেটা সেট ব্যবহার করে Postman API টেস্ট, HTML রিপোর্টের জন্য Newman-এর মাধ্যমে চালানো।">Postman API tests for the Restful-Booker service using CSV-driven data sets, run through Newman for HTML reports.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/Restful-Booker-Performance-Testing" target="_blank" rel="noopener noreferrer">
+          <h4>Restful-Booker Performance <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Restful-Booker API-র বিপরীতে JMeter লোড ও স্ট্রেস টেস্ট, ৫০০ থেকে ২,৫০০ সমসাময়িক ইউজার পর্যন্ত বাড়িয়ে, HTML পারফরম্যান্স রিপোর্টসহ।">JMeter load and stress tests against the Restful-Booker API, scaling from 500 to 2,500 concurrent users, with HTML performance reports.</p>
+        </a>
+      </div>
+
+      <h3 class="projects-subhead reveal" data-i18n-html data-bn="ওয়েব অটোমেশন ফ্রেমওয়ার্ক <span>GitHub</span>">Web Automation Frameworks <span>GitHub</span></h3>
+      <div class="project-grid reveal">
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/SeleniumPythonHybridFramework" target="_blank" rel="noopener noreferrer">
+          <h4>Selenium Python Hybrid Framework <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Excel থেকে ডেটা নেওয়া data-driven আর keyword-driven টেস্টিং একসঙ্গে করা একটি Python Selenium ফ্রেমওয়ার্ক, Allure রিপোর্টিং আর একটি Page Object কাঠামোসহ।">Python Selenium framework combining Excel-fed data-driven and keyword-driven testing, with Allure reporting and a Page Object structure.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/Behave-BDD-Selenium-Python-Hybrid-Framework-with-Page-Object-Model" target="_blank" rel="noopener noreferrer">
+          <h4>Behave BDD + Selenium (POM) <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Behave আর Selenium ব্যবহার করা একটি Python BDD ফ্রেমওয়ার্ক, Gherkin ফিচার ফাইল আর একটি Page Object Model কাঠামোসহ।">Python BDD framework using Behave and Selenium, with Gherkin feature files and a Page Object Model structure.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/PageObjectModelMicrotechNA" target="_blank" rel="noopener noreferrer">
+          <h4>Page Object Model <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Maven আর TestNG দিয়ে তৈরি একটি Java Selenium ফ্রেমওয়ার্ক, Page Object Model ঘিরে সাজানো, Allure রিপোর্টিংসহ।">Java Selenium framework built with Maven and TestNG, structured around the Page Object Model with Allure reporting.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/PageObjectModelWithPageFactoryMicrotechNA" target="_blank" rel="noopener noreferrer">
+          <h4>Page Object Model + Page Factory <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Maven আর TestNG দিয়ে তৈরি একটি Java Selenium ফ্রেমওয়ার্ক, পরিষ্কার এলিমেন্ট ইনিশিয়ালাইজেশনের জন্য PageFactory প্রয়োগ করে।">Java Selenium framework built with Maven and TestNG, applying PageFactory for cleaner element initialization.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/Playwright" target="_blank" rel="noopener noreferrer">
+          <h4>Playwright Automation <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Playwright Test আর Node.js দিয়ে তৈরি একটি ক্রস-ব্রাউজার শুরু থেকে শেষ পর্যন্ত টেস্ট সুইট।">Cross-browser end-to-end test suite built with Playwright Test and Node.js.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/Web-Automation-Cucumber-proj" target="_blank" rel="noopener noreferrer">
+          <h4>Web Automation (Cucumber) <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="BDD-র জন্য Cucumber, বিল্ডের জন্য Maven আর রিপোর্টিংয়ের জন্য Allure ব্যবহার করা একটি Java Selenium ফ্রেমওয়ার্ক।">Java Selenium framework using Cucumber for BDD, Maven for builds, and Allure for reporting.</p>
+        </a>
+        <a class="project-card project-card-link" href="https://github.com/ManikHossain27/Web-Automation-Shwapno" target="_blank" rel="noopener noreferrer">
+          <h4>Web Automation (Shwapno) <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></h4>
+          <p data-bn="Shwapno e-commerce সাইটের জন্য একটি Java Selenium সুইট, TestNG আর Maven দিয়ে চালানো, Allure রিপোর্টিংসহ।">Java Selenium suite for the Shwapno e-commerce site, run with TestNG and Maven, with Allure reporting.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section id="education" class="section">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-bn="শিক্ষা ও সার্টিফিকেশন">Education &amp; Certifications</p>
+      <h2 class="section-title reveal" data-bn="ভিত্তি ও চলমান শেখা।">Foundations &amp; continued learning.</h2>
+
+      <div class="edu-grid">
+        <div class="edu-col reveal">
+          <h3 class="edu-col-title" data-bn="শিক্ষা">Education</h3>
+          <div class="edu-item">
+            <h4 data-bn="কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং-এ বিএসসি">BSc. in Computer Science &amp; Engineering</h4>
+            <p class="edu-meta" data-bn="Stamford University Bangladesh &middot; CGPA ৩.৬৭/৪ &middot; জানুয়ারি ২০১৮ &ndash; ফেব্রুয়ারি ২০২৩ &middot; ঢাকা, বাংলাদেশ">Stamford University Bangladesh &middot; CGPA 3.67/4 &middot; Jan 2018 &ndash; Feb 2023 &middot; Dhaka, Bangladesh</p>
+          </div>
+          <div class="edu-item">
+            <h4 data-bn="উচ্চ মাধ্যমিক সার্টিফিকেট (এইচ.এস.সি)">Higher Secondary Certificate (H.S.C)</h4>
+            <p class="edu-meta" data-bn="Monipur Uchcha Vidyalaya &amp; College &middot; GPA ৪.৩৩/৫ &middot; ২০১৫ &ndash; ২০১৬ &middot; ঢাকা, বাংলাদেশ">Monipur Uchcha Vidyalaya &amp; College &middot; GPA 4.33/5 &middot; 2015 &ndash; 2016 &middot; Dhaka, Bangladesh</p>
+          </div>
+        </div>
+
+        <div class="edu-col reveal">
+          <h3 class="edu-col-title" data-bn="প্রশিক্ষণ ও সার্টিফিকেশন">Training &amp; Certifications</h3>
+          <div class="edu-item">
+            <h4 data-bn="সফটওয়্যার কোয়ালিটি অ্যাসুরেন্স ও সাইবার সিকিউরিটি">Software Quality Assurance &amp; Cyber Security</h4>
+            <p class="edu-meta" data-bn="IT Training BD &middot; মে ২০২৩ &ndash; বর্তমান">IT Training BD &middot; May 2023 &ndash; Present</p>
+          </div>
+          <div class="edu-item">
+            <h4 data-bn="ওয়েব ডিজাইন অ্যান্ড ডেভেলপমেন্ট">Web Design &amp; Development</h4>
+            <p class="edu-meta" data-bn="National Institute of Engineering &amp; Technology &middot; মার্চ ২০১৫ &ndash; আগস্ট ২০১৬">National Institute of Engineering &amp; Technology &middot; Mar 2015 &ndash; Aug 2016</p>
+          </div>
+          <div class="edu-item">
+            <h4 data-bn="ন্যাশনাল স্কিল স্ট্যান্ডার্ড বেসিক কোর্স পরীক্ষা">National Skill Standard Basic Course Examination</h4>
+            <p class="edu-meta" data-bn="Matlab KCP Institute &middot; জানুয়ারি ২০১৫ &ndash; জুন ২০১৫">Matlab KCP Institute &middot; Jan 2015 &ndash; Jun 2015</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="section section-alt">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-bn="গবেষণা">Research</p>
+      <h2 class="section-title reveal" data-bn="প্রকাশিত কাজ।">Published work.</h2>
+
+      <div class="research-card reveal">
+        <svg class="research-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-3H6.5a2.5 2.5 0 0 0-2.5 2.5z"/><path d="M8 7h8M8 10h8" stroke-linecap="round"/></svg>
+        <div>
+          <h3>Physiotherapy Exercise Classification by Exploring Knowledge Distillation with Attention Modules</h3>
+          <p class="research-venue" data-i18n-html data-bn="<strong>NCIM-2023</strong>-এ উপস্থাপিত, Dhaka University of Engineering &amp; Technology &middot; IEEE Xplore-এ উপলব্ধ">Presented at <strong>NCIM-2023</strong>, Dhaka University of Engineering &amp; Technology &middot; Available on IEEE Xplore</p>
+
+          <p class="research-abstract-label" data-bn="সারসংক্ষেপ">Abstract</p>
+          <p class="research-abstract" data-bn="স্বয়ংক্রিয় AI-ভিত্তিক ফিজিওথেরাপি সহায়ক সিস্টেম তাদের ব্যবহারিক প্রয়োজনীয়তার কারণে, বিশেষত বয়স্কদের জন্য, জনপ্রিয় হয়ে উঠছে। এমন একটি সহায়ক সিস্টেমের প্রয়োগ অনেকটাই নির্ভর করে এমবেডেড AI মডেলের উপর, যাকে রিয়েল-টাইম কাজে ব্যবহারের জন্য হালকা হওয়ার পাশাপাশি ব্যায়ামের ভিডিও সঠিকভাবে শ্রেণিবদ্ধ করতে হয়। এই পেপারে আমরা বিষয়টি বিবেচনায় নিয়ে ফিজিওথেরাপি ভিডিও শ্রেণিবিন্যাসের জন্য একটি ডিপ লার্নিং ফ্রেমওয়ার্ক উপস্থাপন করি যা হালকা থাকার পাশাপাশি প্রতিযোগিতামূলকভাবে উচ্চ নির্ভুলতা ধরে রাখে। এর জন্য আমরা মডেল কমপ্রেশনের উদ্দেশ্যে knowledge distillation কৌশল অন্বেষণ করি। আমরা অনলাইন ও self-distillation দুই কৌশলই ব্যবহার করি, এবং বেস নেটওয়ার্ক হিসেবে Convolutional Long Short-Term Memory (ConvLSTM) ও Long-term Recurrent Convolutional Network (LRCN) ব্যবহার করি। এছাড়াও আমরা বিভিন্ন attention module কাজে লাগাই এবং শ্রেণিবিন্যাসের পারফরম্যান্স আরও বাড়াতে বিভিন্ন স্থাপত্য সমন্বয় অন্বেষণ করি। আমরা distillation কৌশল ও attention module-এর বিভিন্ন সমন্বয় অন্বেষণ করে এবং তাদের হাইপারপ্যারামিটার সূক্ষ্মভাবে সমন্বয় করে বিস্তারিত পরীক্ষা চালাই। আমাদের পরীক্ষা থেকে পাওয়া সেরা ফলাফলগুলো রিপোর্ট করা হয়েছে, এবং সেই সমন্বয়গুলো প্রাসঙ্গিক AI সহায়ক সিস্টেমে আরও ব্যবহারের জন্য সুপারিশ করা হয়েছে।">
+            Automated AI-based physiotherapy assistive systems are gaining popularity owing to their practical
+            necessity, particularly for elderly people. The application of such an assistive system is highly
+            reliant on the embedded AI model that needs to correctly classify exercise videos while being
+            lightweight in order to be used for real-time purposes. In this paper, we take this issue into account
+            and present a deep learning framework for physiotherapy video classification that preserves
+            competitively high accuracy while being lightweight as well. For this, we explore knowledge
+            distillation techniques for model compression purposes. We use both online and self-distillation
+            techniques, and use Convolutional Long Short-Term Memory (ConvLSTM) and Long-term Recurrent
+            Convolutional Network (LRCN) as the base networks. Moreover, we utilize different attention modules
+            and explore different architectural combinations to further improve classification performance. We
+            conduct detailed experimentation by exploring different combinations of distillation techniques and
+            attention modules, along with tweaking their hyperparameters. The best results found from our
+            experiments are reported, and those combinations are recommended for further use in relevant AI
+            assistive systems.
+          </p>
+          <div class="tag-list research-index-terms">
+            <span class="tag">Knowledge Distillation</span>
+            <span class="tag">ConvLSTM</span>
+            <span class="tag">LRCN</span>
+            <span class="tag">Attention Module</span>
+          </div>
+
+          <a href="https://ieeexplore.ieee.org/document/10212747" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-small" data-bn="IEEE Xplore-এ পড়ুন &rarr;">Read on IEEE Xplore &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="section">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-bn="ব্লগ">Blog</p>
+      <h2 class="section-title reveal" data-bn="সফটওয়্যার কোয়ালিটির একটি ফিল্ড গাইড।">A field guide to software quality.</h2>
+      <p class="blog-lede reveal" data-bn="নতুন কাউকে যে ক্রমে ধরিয়ে দিতাম সেই ক্রমে কোয়ালিটি নিয়ে ছয় পর্বের একটি সিরিজ: কাজটা কেন আছে, কী লক্ষ্য করে, কারা করেন, আর এখন কোন টুল ও চাপ একে গড়ছে।">A six part series on quality, in the order I would hand it to someone new: why the work exists, what it aims at, the people who do it, and the tools and pressures shaping it now.</p>
+
+      <div class="blog-grid reveal">
+        <a class="blog-card" href="blog/why-qa-matters-in-industry.html">
+          <span class="blog-index">01</span>
+          <span class="blog-meta" data-bn="QA দৃষ্টিভঙ্গি">QA Mindset</span>
+          <h3 data-bn="কেন সফটওয়্যার ইন্ডাস্ট্রিতে এখনও QA দরকার">Why the software industry still needs QA</h3>
+          <p class="blog-excerpt" data-bn="প্রতি কয়েক বছর পর কেউ না কেউ QA-র ভূমিকা শেষ বলে ঘোষণা করেন। মানুষের উপর নির্ভরশীল সফটওয়্যার রিলিজ করা যেকোনো টিমের কাছে কেন এখনও একটি আলাদা কোয়ালিটি টিম গুরুত্বপূর্ণ।">Every few years someone declares the QA role finished. Why a dedicated quality function still matters to any team that ships software people depend on.</p>
+          <span class="blog-readmore"><span data-bn="লেখাটি পড়ুন">Read article</span> <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></span>
+        </a>
+        <a class="blog-card" href="blog/aim-and-goal-of-sqa.html">
+          <span class="blog-index">02</span>
+          <span class="blog-meta" data-bn="QA দৃষ্টিভঙ্গি">QA Mindset</span>
+          <h3 data-bn="সফটওয়্যার কোয়ালিটি অ্যাসুরেন্সের লক্ষ্য ও উদ্দেশ্য">The aim and goal of software quality assurance</h3>
+          <p class="blog-excerpt" data-bn="বাগ খুঁজে বের করা একটি কাজ, উদ্দেশ্য নয়। সফটওয়্যার কোয়ালিটি অ্যাসুরেন্স আসলে কীসের জন্য, আর তা থেকে কোন উদ্দেশ্যগুলো আসে।">Finding bugs is an activity, not a purpose. What software quality assurance is actually for, and the goals that follow from it.</p>
+          <span class="blog-readmore"><span data-bn="লেখাটি পড়ুন">Read article</span> <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></span>
+        </a>
+        <a class="blog-card" href="blog/the-manual-tester.html">
+          <span class="blog-index">03</span>
+          <span class="blog-meta" data-bn="ম্যানুয়াল টেস্টিং">Manual Testing</span>
+          <h3 data-bn="ম্যানুয়াল টেস্টারের প্রয়োজন ফুরিয়ে যায়নি">The manual tester is not going anywhere</h3>
+          <p class="blog-excerpt" data-bn="অটোমেশন বেড়েই চলেছে, তবু এক্সপ্লোরেটরি টেস্টারের গুরুত্ব আগের চেয়ে বেশি। টিমে শক্তিশালী ম্যানুয়াল টেস্টার রাখার পক্ষে যুক্তি।">Automation keeps growing, yet the exploratory tester matters more than ever. The case for keeping strong manual testers on the team.</p>
+          <span class="blog-readmore"><span data-bn="লেখাটি পড়ুন">Read article</span> <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></span>
+        </a>
+        <a class="blog-card" href="blog/why-automation-and-playwright.html">
+          <span class="blog-index">04</span>
+          <span class="blog-meta" data-bn="টেস্ট অটোমেশন">Test Automation</span>
+          <h3 data-bn="কেন অটোমেশন টেস্টিং জরুরি, আর কেন Playwright আমার প্রথম পছন্দ">Why automation testing matters, and why Playwright won me over</h3>
+          <p class="blog-excerpt" data-bn="সফটওয়্যার শুধু হাতে যাচাই করার জন্য বড্ড দ্রুত এগোয়। কেন অটোমেটেড রিগ্রেশন এখন অপরিহার্য, আর কেন Playwright ব্রাউজার টেস্টিংয়ে আমার ডিফল্ট টুল।">Software ships too fast to verify by hand alone. Why automated regression is now essential, and why Playwright has become my default tool for browser testing.</p>
+          <span class="blog-readmore"><span data-bn="লেখাটি পড়ুন">Read article</span> <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></span>
+        </a>
+        <a class="blog-card" href="blog/why-performance-testing-matters.html">
+          <span class="blog-index">05</span>
+          <span class="blog-meta" data-bn="পারফরম্যান্স">Performance</span>
+          <h3 data-bn="কেন পারফরম্যান্স টেস্টিং জরুরি, ঐচ্ছিক নয়">Why performance testing is important, not optional</h3>
+          <p class="blog-excerpt" data-bn="একটি প্রোডাক্ট প্রতিটি ফাংশনাল টেস্ট পাস করেও বাস্তব লোডের নিচে ইউজারদের কাছে ব্যর্থ হতে পারে। কেন পারফরম্যান্স টেস্টিং definition of done-এর অংশ।">A product can pass every functional test and still fail its users under real load. Why performance testing belongs in the definition of done.</p>
+          <span class="blog-readmore"><span data-bn="লেখাটি পড়ুন">Read article</span> <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></span>
+        </a>
+        <a class="blog-card" href="blog/generative-ai-in-testing.html">
+          <span class="blog-index">06</span>
+          <span class="blog-meta" data-bn="QA-তে AI">AI in QA</span>
+          <h3 data-bn="টেস্টিংয়ে জেনারেটিভ AI আসলে কীভাবে সাহায্য করে">How generative AI actually helps in testing</h3>
+          <p class="blog-excerpt" data-bn="বড় ল্যাঙ্গুয়েজ মডেল কোথায় সত্যিকারভাবে টেস্ট ডিজাইন, অটোমেশন কোড আর ট্রায়াজ দ্রুত করে, আর কোথায় এখনও সতর্ক মানুষের হাত দরকার।">Where large language models genuinely speed up test design, automation code, and triage, and where they still need a careful human hand.</p>
+          <span class="blog-readmore"><span data-bn="লেখাটি পড়ুন">Read article</span> <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-bn="যোগাযোগ">Contact</p>
+      <h2 class="section-title reveal" data-bn="আসুন একসাথে কাজ করি।">Let's work together.</h2>
+      <p class="contact-lede reveal" data-bn="সফটওয়্যার QA, টেস্ট অটোমেশন আর Associate PM ভূমিকার জন্য উন্মুক্ত। যেকোনো সময় যোগাযোগ করুন।">Open to Software QA, Test Automation, and Associate PM roles. Reach out any time.</p>
+
+      <div class="contact-grid reveal">
+        <a class="contact-card" href="mailto:manik.hossain2706@gmail.com">
+          <span class="contact-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2.5 7.8 5.86L19.8 6H4.2zM20 8.24l-7.4 5.56a1 1 0 0 1-1.2 0L4 8.24V18.5c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V8.24z"/></svg></span>
+          <span class="contact-text">
+            <span class="contact-label" data-bn="ইমেইল">Email</span>
+            <span class="contact-value">manik.hossain2706@gmail.com</span>
+          </span>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/manik27" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg></span>
+          <span class="contact-text">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/manik27</span>
+          </span>
+        </a>
+        <a class="contact-card" href="https://github.com/ManikHossain27" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></span>
+          <span class="contact-text">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/ManikHossain27</span>
+          </span>
+        </a>
+        <div class="contact-card contact-card-static">
+          <span class="contact-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6H8l4-4 4 4h-3v6z"/></svg></span>
+          <span class="contact-text">
+            <span class="contact-label" data-bn="অবস্থান">Location</span>
+            <span class="contact-value" data-bn="ঢাকা, বাংলাদেশ">Dhaka, Bangladesh</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#top" class="logo">MH<span class="logo-dot">.</span></a>
+    <p class="footer-copy">&copy; <span id="year"></span> Manik Hossain. <span data-bn="সর্বস্বত্ব সংরক্ষিত।">All rights reserved.</span></p>
+    <div class="footer-socials">
+      <a href="https://github.com/ManikHossain27" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/manik27" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="mailto:manik.hossain2706@gmail.com" aria-label="Send email">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2.5 7.8 5.86L19.8 6H4.2zM20 8.24l-7.4 5.56a1 1 0 0 1-1.2 0L4 8.24V18.5c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V8.24z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top" data-bn-aria-label="উপরে ফিরে যান">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<script src="js/script.js?v=3"></script>
+<script src="js/theme.js?v=1"></script>
+<script src="js/resume.js?v=1"></script>
+<script src="js/i18n.js?v=2"></script>
+</body>
+</html>

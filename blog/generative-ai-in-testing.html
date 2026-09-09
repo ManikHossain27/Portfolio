@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('pf-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<title>How Generative AI Actually Helps in Testing | Manik Hossain</title>
+<meta name="description" content="Where large language models genuinely speed up test design, automation code, and triage, and where they still need a careful human hand.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial, sans-serif' font-weight='700' fill='%2338e0d8' text-anchor='middle'%3EMH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="../index.html#top" class="logo">MH<span class="logo-dot">.</span></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="../index.html#about" class="nav-link" data-bn="পরিচিতি">About</a></li>
+        <li><a href="../index.html#experience" class="nav-link" data-bn="অভিজ্ঞতা">Experience</a></li>
+        <li><a href="../index.html#projects" class="nav-link" data-bn="প্রজেক্ট">Projects</a></li>
+        <li><a href="../index.html#blog" class="nav-link" data-bn="ব্লগ">Blog</a></li>
+        <li><a href="../index.html#contact" class="nav-link" data-bn="যোগাযোগ">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Switch theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="lang-toggle" aria-label="Switch language">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" stroke-linecap="round"/></svg>
+        <span data-lang-label>বাংলা</span>
+      </button>
+      <a href="../assets/Resume-Manik-Hossain.pdf" class="btn btn-outline btn-small header-cta" download data-bn="রেজিউমে">Resume</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <article class="post-wrap">
+    <a href="../index.html#blog" class="post-back" data-bn="&larr; সব লেখায় ফিরে যান">&larr; Back to all posts</a>
+    <p class="post-eyebrow" data-bn="পর্ব ৬ / ৬ &middot; QA-তে AI &middot; ৬ মিনিট পড়া">Part 6 of 6 &middot; AI in QA &middot; 6 min read</p>
+    <h1 class="post-title" data-bn="টেস্টিংয়ে জেনারেটিভ AI আসলে কীভাবে সাহায্য করে">How generative AI actually helps in testing</h1>
+    <p class="post-byline" data-bn="লিখেছেন মানিক হোসেন &middot; আগস্ট ২০২৬">By Manik Hossain &middot; August 2026</p>
+
+    <div class="post-body">
+      <p data-bn="প্রতি কয়েক বছর পর পর ইন্ডাস্ট্রি এমন একটি নতুন জিনিস খুঁজে পায় যা আমাদের চেনা টেস্টিং শেষ করে দেওয়ার কথা। রেকর্ড অ্যান্ড প্লেব্যাক টুল সেটা করবে বলা হয়েছিল। তারপর মডেল-ভিত্তিক টেস্টিং। এখন সেটা জেনারেটিভ AI। এই চক্র যথেষ্ট দেখেছি বলে দাবিগুলো নিয়ে শান্ত থাকি, তাই বলি এই প্রযুক্তি আজ আমার কাজে সত্যিকার অর্থে কোথায় সাহায্য করে, আর কোথায় এখনও সতর্ক হাতের দরকার।">Every few years the industry finds a new thing that is supposed to end testing as we know it. Record and playback tools were going to do it. Then model based testing. Now it is generative AI. I have seen enough of these cycles to stay calm about the claims, so let me tell you where this technology genuinely helps my work today, and where it still needs a careful hand.</p>
+
+      <h2 data-bn="জেনারেটিভ AI যেখানে তার জায়গা অর্জন করে">Where generative AI earns its place</h2>
+      <h3 data-bn="রিকোয়ারমেন্টকে প্রথম টেস্ট কেসের সেটে রূপ দেওয়া">Turning requirements into a first set of test cases</h3>
+      <p data-bn="একটি ল্যাঙ্গুয়েজ মডেলকে একটি ইউজার স্টোরি আর তার অ্যাকসেপ্টেন্স ক্রাইটেরিয়া দিন, এটি সেকেন্ডের মধ্যে পরিস্থিতির একটি মজবুত তালিকা তৈরি করবে। পজিটিভ পাথ, সীমানার মান, অনুপস্থিত ফিল্ড, অবৈধ ফরম্যাট, পারমিশন চেক। এটি খুব কমই সব ভাবে, কিন্তু আমাকে একটি চলন্ত শুরু দেয় আর ব্যস্ত দিনে আমি যেসব স্পষ্ট কেস তাড়াহুড়ায় পার করে যেতাম সেগুলো ধরে ফেলে। আমি আউটপুটটাকে একজন জুনিয়র সহকর্মীর খসড়া হিসেবে দেখি। আমি এটি পর্যালোচনা করি, যা মানায় না তা কাটি, আর মডেল যা জানতে পারত না সেই প্রেক্ষাপট যোগ করি।">Give a language model a user story with its acceptance criteria and it will produce a solid list of scenarios in seconds. Positive paths, boundary values, missing fields, invalid formats, permission checks. It rarely thinks of everything, but it gives me a running start and it catches the obvious cases I might rush past on a busy day. I treat the output as a draft from a junior colleague. I review it, cut what does not fit, and add the context the model could not know.</p>
+      <h3 data-bn="অটোমেশন কোড লেখা আর রিফ্যাক্টর করা">Writing and refactoring automation code</h3>
+      <p data-bn="আধুনিক সহকারীরা অটোমেশনের যান্ত্রিক দিকটায় শক্তিশালী। একটি মার্কআপ ব্লক থেকে একটি page object-এর খসড়া করুন। একটি ম্যানুয়াল টেস্টকে একটি Playwright স্ক্রিপ্টে রূপান্তর করুন। একটি পুরো ফাইল জুড়ে একটি প্যাটার্নের নাম বদলান। একটি বিভ্রান্তিকর লেগ্যাসি টেস্ট কী করার চেষ্টা করছিল তা ব্যাখ্যা করুন। এখানেই আমি সবচেয়ে বড় সময় সাশ্রয় দেখি। যে কাজে এক ঘণ্টা লাগত তা এখন পনেরো মিনিটের লেখা আর পর্যালোচনায় হয়।">Modern assistants are strong at the mechanical side of automation. Draft a page object from a block of markup. Convert a manual test into a Playwright script. Rename a pattern across a whole file. Explain what a confusing legacy test was trying to do. This is where I see the largest time saving. A task that took an hour now takes fifteen minutes of writing and reviewing.</p>
+      <h3 data-bn="বাস্তবসম্মত টেস্ট ডেটা তৈরি করা">Generating realistic test data</h3>
+      <p data-bn="একটি পে-রোল লোড টেস্টের জন্য বিশ্বাসযোগ্য নাম, বেতন, ট্যাক্স কোড আর যোগদানের তারিখসহ দুইশ কাল্পনিক কর্মী দরকার? একটি মডেল সেটা একটি প্রম্পট থেকে তৈরি করে, আর ডেটাটা যথেষ্ট বাস্তব দেখায় যাতে এমন ফরম্যাটিং আর সর্টিং বাগ বেরিয়ে আসে যা পরিপাটি নমুনা ডেটা লুকিয়ে রাখত।">Need two hundred fake employees with plausible names, salaries, tax codes, and joining dates for a payroll load test? A model produces that from one prompt, and the data looks real enough to surface formatting and sorting bugs that tidy sample data would hide.</p>
+      <h3 data-bn="ব্যর্থতাকে পাঠযোগ্য করা">Making failures readable</h3>
+      <p data-bn="একটি সহকারীকে একটি স্ট্যাক ট্রেস আর একটি স্ক্রিনশট দেখিয়ে জিজ্ঞেস করুন সম্ভবত কী ভুল হয়েছে। এটি প্রায়ই কারণটা বলে দেবে আর পরের চেকটা পরামর্শ দেবে। এটি সবসময় ঠিক হয় না, কিন্তু প্রায় প্রতিটি তদন্তের প্রথম দশ মিনিট ছোট করে দেয়।">Point an assistant at a stack trace and a screenshot and ask what likely went wrong. It will often name the cause and suggest the next check. It is not always right, but it shortens the first ten minutes of almost every investigation.</p>
+      <h3 data-bn="সারসংক্ষেপ আর রিপোর্টিং">Summarising and reporting</h3>
+      <p data-bn="এটিকে চল্লিশটি ব্যর্থতাসহ একটি রান লগ দিন আর একটি গোছানো সারসংক্ষেপ চান। এটি সম্ভাব্য মূল কারণ অনুযায়ী সেগুলোকে দলবদ্ধ করে, যাতে আমি দেখতে পাই যে চল্লিশটির মধ্যে ত্রিশটি একটি ভাঙা সিলেক্টর ভাগ করে নেয়। ওই ট্রায়াজ আগে ধীর আর ম্যানুয়াল ছিল।">Feed it a run log with forty failures and ask for a grouped summary. It clusters them by likely root cause so I can see that thirty of the forty share one broken selector. That triage used to be slow and manual.</p>
+      <h3 data-bn="এক্সপ্লোরেটরি টেস্টিংয়ে সহায়তা">Exploratory testing support</h3>
+      <p data-bn="টেস্ট করার সময় আমি মডেলকে এমন কোণ পরামর্শ দিতে বলি যা আমি চেষ্টা করিনি। অস্বাভাবিক ক্যারেক্টার সেট, টাইম জোনের সীমানা, সেশন টাইমআউট, একই রেকর্ড দুজন মানুষ একসঙ্গে এডিট করা। এটি এমন একজন চিন্তার সঙ্গীর মতো কাজ করে যিনি ব্যর্থতার প্যাটার্নের একটি বিশাল বই পড়ে ফেলেছেন।">While I test, I ask the model to suggest angles I have not tried. Unusual character sets, time zone edges, session timeouts, two people editing the same record. It works like a thinking partner that has read a very large book of failure patterns.</p>
+
+      <h2 data-bn="যেখানে এখনও তদারকির দরকার">Where it still needs supervision</h2>
+      <h3 data-bn="এটি আপনার প্রোডাক্ট চেনে না">It does not know your product</h3>
+      <p data-bn="মডেলটি কখনো আপনার ইউজারদের সঙ্গে কথা বলেনি বা আপনার ঘটনার ইতিহাস পড়েনি। এটি জানে না যে একজন ক্লায়েন্ট সবসময় একটি স্প্রেডশিট থেকে ডেটা পেস্ট করেন, বা একটি নির্দিষ্ট স্ক্রিনের একটি কষ্টের অতীত আছে। ওই জ্ঞান আপনার টিমে থাকে, আর ঠিক সেখানেই গুরুত্বপূর্ণ বাগগুলো লুকিয়ে থাকে।">The model has never spoken to your users or read your incident history. It does not know that one client always pastes data from a spreadsheet, or that a certain screen has a painful past. That knowledge lives in your team, and it is exactly where the important bugs hide.</p>
+      <h3 data-bn="আত্মবিশ্বাসের সঙ্গে ভুল উত্তর">Confident wrong answers</h3>
+      <p data-bn="একটি ল্যাঙ্গুয়েজ মডেল একটি ভুল সিলেক্টর বা একটি ভুল প্রত্যাশিত ফলাফল সেই একই শান্ত সুরে বলবে যেভাবে সঠিকগুলো বলে। প্রতিটি তৈরি করা টেস্ট এখনও চালিয়ে যাচাই করতে হয়। যাচাই না করা আস্থা একটি দায় হয়ে দাঁড়ায়।">A language model will state an incorrect selector or a wrong expected result in the same calm tone it uses for correct ones. Every generated test still has to be run and verified. Trust that is not checked becomes a liability.</p>
+      <h3 data-bn="কভারেজের অভিনয়">Coverage theatre</h3>
+      <p data-bn="পাঁচশ টেস্ট কেস তৈরি করে উৎপাদনশীল বোধ করা সহজ। পরিমাণ কভারেজ নয়। বাস্তব ঝুঁকির সঙ্গে মেলে এমন পঞ্চাশটি ভালোভাবে বাছাই করা টেস্ট এমন এক গাদা তৈরি করা কেসের চেয়ে মূল্যবান যেগুলো সবাই একই হ্যাপি পাথ চালায়।">It is easy to generate five hundred test cases and feel productive. Volume is not coverage. Fifty well chosen tests that map to real risk are worth more than a pile of generated cases that all exercise the same happy path.</p>
+      <h3 data-bn="ডেটা আর গোপনীয়তার যত্ন">Data and privacy care</h3>
+      <p data-bn="কখনো আসল কাস্টমার রেকর্ড, ক্রেডেনশিয়াল, বা প্রকাশ না হওয়া ব্যবসায়িক তথ্য একটি পাবলিক টুলে পেস্ট করবেন না। মাস্ক করা ডেটা ব্যবহার করুন আর সংবেদনশীল কিছু একটি প্রম্পটের কাছে যাওয়ার আগে আপনার কোম্পানির নীতি জেনে নিন।">Never paste real customer records, credentials, or unreleased business detail into a public tool. Use masked data and know your company policy before anything sensitive goes near a prompt.</p>
+
+      <h2 data-bn="আমি কীভাবে এটিকে কাজে লাগাই">How I put it to work</h2>
+      <p data-bn="আমি জেনারেটিভ AI-কে বিস্তৃত জ্ঞান আর কোনো জবাবদিহিতা নেই এমন একজন দ্রুত ও অক্লান্ত সহকারী হিসেবে ভাবি। এটি খসড়া করে, আমি সিদ্ধান্ত নিই। এটি কাজের যান্ত্রিক অংশগুলো দ্রুত করে দেয় যাতে আমি সেই অংশগুলোতে বেশি সময় দিতে পারি যেগুলোর জন্য এমন একজন মানুষ দরকার যিনি প্রোডাক্ট বোঝেন আর ইউজারের কথা ভাবেন। সেভাবে ব্যবহার করে এটি আমাকে লক্ষণীয়ভাবে দ্রুত করেছে। পর্যালোচনা ছাড়া চাবি হাতে দিলে এটি চুপচাপ আমার সুইট আত্মবিশ্বাসী অর্থহীনতায় ভরে দিত। মূল্যটা সত্যি, আর বিচারবুদ্ধির দরকারটাও সত্যি।">I think of generative AI as a fast and tireless assistant with broad knowledge and no accountability. It drafts, I decide. It speeds up the mechanical parts of the job so I can spend more time on the parts that need a human who understands the product and cares about the user. Used that way it has made me noticeably faster. Handed the keys without review, it would quietly fill my suite with confident nonsense. The value is real, and so is the need for judgement.</p>
+    </div>
+
+    <div id="relatedPosts" data-current="06"></div>
+
+    <div class="post-footer">
+      <p data-bn="লিখেছেন মানিক হোসেন, সফটওয়্যার QA ইঞ্জিনিয়ার।">Written by Manik Hossain, Software QA Engineer.</p>
+      <a href="../index.html#contact" class="btn btn-outline btn-small" data-bn="যোগাযোগ করুন">Get in touch</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="../index.html#top" class="logo">MH<span class="logo-dot">.</span></a>
+    <p class="footer-copy">&copy; <span id="year"></span> Manik Hossain. <span data-bn="সর্বস্বত্ব সংরক্ষিত।">All rights reserved.</span></p>
+    <div class="footer-socials">
+      <a href="https://github.com/ManikHossain27" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/manik27" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="mailto:manik.hossain2706@gmail.com" aria-label="Send email">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2.5 7.8 5.86L19.8 6H4.2zM20 8.24l-7.4 5.56a1 1 0 0 1-1.2 0L4 8.24V18.5c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V8.24z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/posts.js"></script>
+<script src="../js/related.js"></script>
+<script src="../js/script.js?v=3"></script>
+<script src="../js/theme.js?v=1"></script>
+<script src="../js/resume.js?v=1"></script>
+<script src="../js/i18n.js?v=2"></script>
+</body>
+</html>

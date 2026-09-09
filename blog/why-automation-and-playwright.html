@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('pf-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<title>Why Automation Testing Matters, and Why Playwright Won Me Over | Manik Hossain</title>
+<meta name="description" content="Software ships too fast to verify by hand alone. A look at why automated regression is now essential, and why Playwright has become my default tool for browser testing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial, sans-serif' font-weight='700' fill='%2338e0d8' text-anchor='middle'%3EMH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="../index.html#top" class="logo">MH<span class="logo-dot">.</span></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="../index.html#about" class="nav-link" data-bn="পরিচিতি">About</a></li>
+        <li><a href="../index.html#experience" class="nav-link" data-bn="অভিজ্ঞতা">Experience</a></li>
+        <li><a href="../index.html#projects" class="nav-link" data-bn="প্রজেক্ট">Projects</a></li>
+        <li><a href="../index.html#blog" class="nav-link" data-bn="ব্লগ">Blog</a></li>
+        <li><a href="../index.html#contact" class="nav-link" data-bn="যোগাযোগ">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Switch theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="lang-toggle" aria-label="Switch language">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19" stroke-linecap="round"/></svg>
+        <span data-lang-label>বাংলা</span>
+      </button>
+      <a href="../assets/Resume-Manik-Hossain.pdf" class="btn btn-outline btn-small header-cta" download data-bn="রেজিউমে">Resume</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <article class="post-wrap">
+    <a href="../index.html#blog" class="post-back" data-bn="&larr; সব লেখায় ফিরে যান">&larr; Back to all posts</a>
+    <p class="post-eyebrow" data-bn="পর্ব ৪ / ৬ &middot; টেস্ট অটোমেশন &middot; ৬ মিনিট পড়া">Part 4 of 6 &middot; Test Automation &middot; 6 min read</p>
+    <h1 class="post-title" data-bn="কেন অটোমেশন টেস্টিং জরুরি, আর কেন Playwright আমার প্রথম পছন্দ">Why automation testing matters, and why Playwright won me over</h1>
+    <p class="post-byline" data-bn="লিখেছেন মানিক হোসেন &middot; সেপ্টেম্বর ২০২৬">By Manik Hossain &middot; September 2026</p>
+
+    <div class="post-body">
+      <p data-bn="সফটওয়্যার কোয়ালিটিতে আমার প্রায় তিন দশক কেটেছে। যখন শুরু করি, তখন আমরা ছাপানো বাইন্ডারে টেস্ট কেস রাখতাম আর কাগজের ফর্মে ত্রুটি লিখতাম। এরপর টুল বহুবার বদলেছে, কিন্তু একটি শিক্ষা অটল থেকেছে। যেসব টিম আত্মবিশ্বাসের সঙ্গে রিলিজ দেয়, তারা টেস্টিংকে ইঞ্জিনিয়ারিংয়ের কাজ হিসেবে দেখে, শেষে টিক দেওয়ার একটি ঘর হিসেবে নয়।">I have spent close to three decades in software quality. When I started, we tracked test cases in printed binders and logged defects on paper forms. The tools have changed many times since then, but one lesson has stayed constant. The teams that ship with confidence are the teams that treat testing as engineering work, not as a box to tick at the end.</p>
+      <p data-bn="অটোমেশন সেই পরিবর্তনের কেন্দ্রে। ব্যাখ্যা করি কেন এটি আর ঐচ্ছিক নয়, আর তারপর কেন ব্রাউজার অটোমেশনের জন্য Playwright আমার ডিফল্ট পছন্দ হয়ে উঠেছে।">Automation sits at the centre of that shift. Let me explain why it is no longer optional, and then why Playwright has become my default choice for browser automation.</p>
+
+      <h2 data-bn="কেন অটোমেশন টেস্টিং প্রয়োজন">Why automation testing is necessary</h2>
+      <h3 data-bn="সফটওয়্যার যেকোনো মানুষের সামলানোর চেয়ে দ্রুত বদলায়">Software changes faster than any person can keep up with</h3>
+      <p data-bn="আধুনিক প্রোডাক্ট সাপ্তাহিক, কখনো দৈনিক রিলিজ দেয়। প্রতিটি রিলিজ ভাগ করা কোডে হাত দেয়। পেমেন্ট স্ক্রিনের একটি পরিবর্তন তিন পেজ দূরের একটি লগইন ফ্লো ভেঙে দিতে পারে। প্রতিটি রিলিজের আগে যদি একজন মানুষকে হাতে করে প্রতিটি গুরুত্বপূর্ণ পথ ক্লিক করে যেতে হয়, দুটোর একটি ঘটে। হয় রিলিজ কচ্ছপের গতিতে নামে, নয়তো চেকগুলো বাদ পড়ে আর ত্রুটি কাস্টমারের কাছে পৌঁছে যায়। অটোমেশন আপনাকে এমন একটি নিরাপত্তা জাল দেয় যা কয়েক মিনিটে চলে আর কখনো ক্লান্ত বা বিরক্ত হয় না।">Modern products release weekly, sometimes daily. Every release touches shared code. A change to the payment screen can break a login flow three pages away. If a human has to click through every important path by hand before each release, one of two things happens. Either the release slows to a crawl, or the checks get skipped and defects reach customers. Automation gives you a safety net that runs in minutes and never gets tired or bored.</p>
+      <h3 data-bn="রিগ্রেশন কভারেজ সময়ের সঙ্গে জমতে থাকে">Regression coverage compounds over time</h3>
+      <p data-bn="একটি ম্যানুয়াল পাস শেষ হওয়ার মুহূর্তেই মিলিয়ে যায়। একটি অটোমেটেড টেস্ট থেকে যায়। এক বছর ধারাবাহিক কাজের পর আপনার হাতে শত শত চেকের একটি লাইব্রেরি থাকে যা প্রতিটি কমিটে চলে। একটি পরিবর্তন নিরাপদ কিনা তা আন্দাজ করা আর জানার মধ্যে পার্থক্যটাই ওই লাইব্রেরি।">A manual pass is gone the moment it ends. An automated test stays. After a year of steady work you own a library of hundreds of checks that run on every commit. That library is the difference between guessing whether a change is safe and knowing it.</p>
+      <h3 data-bn="দ্রুত ফিডব্যাক মনোযোগ রক্ষা করে">Fast feedback protects focus</h3>
+      <p data-bn="একজন ডেভেলপার কোড পুশ করার দশ মিনিট পর যদি একটি টেস্ট ব্যর্থ হয়, ফিক্সটা সস্তা। পরিবর্তনটা তখনও ডেভেলপারের মাথায় তাজা। একই ত্রুটি যদি দুই সপ্তাহ পর স্টেজিংয়ে ধরা পড়ে, তখন কাউকে ওই পুরো প্রেক্ষাপট আবার গড়ে তুলতে হয়, সমস্যাটা পুনরুৎপাদন করতে হয়, আর তা মূল কারণ পর্যন্ত পিছিয়ে খুঁজতে হয়। অটোমেশন এই আবিষ্কারকে কারণের যতটা সম্ভব কাছে নিয়ে আসে।">When a test fails ten minutes after a developer pushes code, the fix is cheap. The developer still has the change fresh in mind. When the same defect is found two weeks later in staging, someone has to rebuild all that context, reproduce the issue, and trace it back to the cause. Automation moves the discovery as close to the cause as possible.</p>
+      <h3 data-bn="এটি দক্ষ মানুষদের দক্ষ কাজের জন্য মুক্ত করে">It frees skilled people for skilled work</h3>
+      <p data-bn="এই জায়গাটাই মানুষ এড়িয়ে যায়। অটোমেশন টেস্টারদের প্রতিস্থাপন করে না। এটি পুনরাবৃত্ত ক্লিক করা সরিয়ে দেয় যাতে টেস্টাররা তাঁদের সময় দিতে পারেন এক্সপ্লোরেটরি টেস্টিং, ঝুঁকি বিশ্লেষণ, ব্যবহারযোগ্যতা, আর সেইসব অদ্ভুত প্রান্তিক পরিস্থিতিতে যেগুলো চেষ্টা করার কথা স্ক্রিপ্টের মাথায় আসে না। যন্ত্র সামলায় একঘেয়ে পথ। মানুষ সামলায় বিচারবুদ্ধি।">This is the point people miss. Automation does not replace testers. It removes the repetitive clicking so testers can spend their hours on exploratory testing, risk analysis, usability, and the strange edge cases that scripts never think to try. The machine handles the boring paths. The human handles judgement.</p>
+      <h3 data-bn="ধারাবাহিকতা আর প্রমাণ">Consistency and evidence</h3>
+      <p data-bn="একটি অটোমেটেড সুইট প্রতিবার একইভাবে চলে। এটি লগ, স্ক্রিনশট আর রিপোর্ট তৈরি করে যা আপনি একজন অডিটর, একজন ক্লায়েন্ট, বা একজন উদ্বিগ্ন প্রোডাক্ট ওনারের হাতে দিতে পারেন। পে-রোল বা সরকারি প্ল্যাটফর্মের মতো নিয়ন্ত্রিত কাজে ওই নথিটুকু পাস বা ফেল ফলাফলের মতোই মূল্যবান।">An automated suite runs the same way every time. It produces logs, screenshots, and reports that you can hand to an auditor, a client, or a nervous product owner. In regulated work such as payroll or government platforms, that trail is worth as much as the pass or fail result itself.</p>
+      <p data-bn="অটোমেশন বিনামূল্যে আসে না। এর ডিজাইন, রক্ষণাবেক্ষণ, আর যেসব টেস্ট আর কাজে আসে না সেগুলো সৎভাবে ছেঁটে ফেলা দরকার। কিন্তু কয়েক মাসের বেশি টিকবে এমন যেকোনো প্রোডাক্টে এর রিটার্ন নিয়ে কোনো প্রশ্ন নেই।">Automation is not free. It needs design, maintenance, and honest pruning of tests that no longer earn their keep. But on any product that will live longer than a few months, the return is not in question.</p>
+
+      <h2 data-bn="কেন Playwright আমার ডিফল্ট হয়ে উঠেছে">Why Playwright has become my default</h2>
+      <p data-bn="আমি Selenium-এর শুরুর দিন থেকে এটি নিয়ে কাজ করেছি আর এখনও এটিকে সম্মান করি। কিন্তু গত কয়েক বছরে আমার নতুন প্রজেক্ট Playwright দিয়ে শুরু হয়, আর কারণটা এই।">I have worked with Selenium since its early days and I still respect it. But over the last few years my new projects start with Playwright, and here is why.</p>
+      <h3 data-bn="একটি টুল, প্রতিটি ব্রাউজার">One tool, every browser</h3>
+      <p data-bn="Playwright একটি একক API-র মাধ্যমে Chromium, Firefox আর WebKit চালায়। আমি প্রতিটি টেস্টারের জন্য একটি Mac না কিনেই যাচাই করতে পারি যে একটি ফ্লো Safari ঘরানার ইঞ্জিনে কাজ করে। ছোট একটি টিমের জন্য এই নাগালটা গুরুত্বপূর্ণ।">Playwright drives Chromium, Firefox, and WebKit through a single API. I can check that a flow works in a Safari style engine without buying a Mac for every tester. For a small team that reach matters.</p>
+      <h3 data-bn="অপেক্ষাটা আপনার হয়ে সামলে নেওয়া হয়">Waiting is handled for you</h3>
+      <p data-bn="পুরোনো দুনিয়ায় ফ্লেকি টেস্টের সবচেয়ে বড় উৎস ছিল টাইমিং। যেসব এলিমেন্ট এখনও প্রস্তুত নয়, অ্যানিমেশন এখনও চলছে, নেটওয়ার্ক কল এখনও খোলা। Playwright একটি এলিমেন্টের উপর কাজ করার আগে সেটি কার্যকর হওয়া পর্যন্ত অপেক্ষা করে। ওই একটি ডিজাইন সিদ্ধান্ত আমার সুইট থেকে বেশিরভাগ sleep স্টেটমেন্ট আর এলোমেলো ব্যর্থতা সরিয়ে দিয়েছে।">The biggest source of flaky tests in the old world was timing. Elements that were not ready yet, animations still running, network calls still open. Playwright waits for an element to be actionable before it acts on it. That one design decision removed most of the sleep statements and random failures from my suites.</p>
+      <h3 data-bn="এটি অ্যাপটিকে ইউজারের মতো করেই দেখে">It sees the app the way a user does</h3>
+      <p data-bn="Playwright ভঙ্গুর অভ্যন্তরীণ আইডেন্টিফায়ারের বদলে দৃশ্যমান টেক্সট, লেবেল আর রোলের ভিত্তিতে লোকেটর ব্যবহারে উৎসাহ দেয়। সেভাবে লেখা টেস্ট ইউজারের আচরণের বর্ণনার মতো পড়া যায়, আর অন্তর্নিহিত মার্কআপের নতুন ডিজাইন হলেও এগুলো অনেক ভালোভাবে টিকে থাকে।">Playwright encourages locators based on visible text, labels, and roles rather than brittle internal identifiers. Tests written that way read like a description of user behaviour, and they survive a redesign of the underlying markup far better.</p>
+      <h3 data-bn="টুলিং সত্যিই ভালো">The tooling is genuinely good</h3>
+      <p data-bn="Trace Viewer প্রতিটি ধাপে একটি স্ন্যাপশটসহ একটি রানের পুরো টাইমলাইন রেকর্ড করে। পাইপলাইনে কিছু ব্যর্থ হলে আমি ট্রেসটা খুলে ঘটনাটা ঘটতে দেখি। Codegen আমি অ্যাপে ক্লিক করার সময় একটি স্ক্রিপ্টের প্রথম খসড়া লিখে দেয়। টেস্ট রানার বাড়তি প্লাগইন ছাড়াই সমান্তরাল এক্সিকিউশন, রিট্রাই আর রিপোর্টিং সামলায়।">Trace Viewer records a full timeline of a run with a snapshot at every step. When something fails in the pipeline, I open the trace and watch it happen. Codegen writes a first draft of a script while I click through the app. The test runner handles parallel execution, retries, and reporting without extra plugins.</p>
+      <h3 data-bn="এটি ব্রাউজারের চেয়ে বেশি কিছু সামলায়">It covers more than the browser</h3>
+      <p data-bn="Playwright একই প্রজেক্টে সরাসরি API কল টেস্ট করতে পারে, নেটওয়ার্ক রেসপন্স মক করতে পারে, একাধিক ট্যাব ও অরিজিন সামলাতে পারে, আর অথেন্টিকেশন স্টেট জমিয়ে রাখতে পারে যাতে টেস্ট লগইন স্ক্রিন এড়িয়ে যায়। যে কাজে আগে তিনটি লাইব্রেরি লাগত তা এখন একটিতেই থাকে।">Playwright can test API calls directly in the same project, mock network responses, handle multiple tabs and origins, and store authentication state so tests skip the login screen. Work that used to need three libraries now lives in one.</p>
+      <h3 data-bn="সেটআপ দ্রুত">Setup is quick</h3>
+      <p data-bn="একটি ইনস্টল কমান্ড ব্রাউজারগুলো সঙ্গে নিয়ে আসে। টিমের একজন নতুন ইঞ্জিনিয়ার আধা দিন নয়, পনেরো মিনিটে টেস্ট চালাতে শুরু করেন।">One install command brings the browsers with it. A new engineer on the team is running tests in fifteen minutes, not half a day.</p>
+
+      <h2 data-bn="সৎ সারসংক্ষেপ">The honest summary</h2>
+      <p data-bn="অটোমেশন প্রয়োজন কারণ সফটওয়্যার এত দ্রুত এগোয় আর এত ঝুঁকি বহন করে যে শুধু হাতে যাচাই করা যায় না। এটি গতি, কভারেজ, আর আপনার মানুষদের যে স্বাধীনতা দেয় তা দিয়ে নিজের খরচ তুলে নেয়। Playwright তার জায়গা অর্জন করে কারণ এটি নির্ভরযোগ্য ব্রাউজার টেস্ট লেখা সহজ করে আর আগের টুলগুলোর চেয়ে ডিবাগ করা অনেক সহজ করে। আজ নতুন একটি সুইট শুরু করলে আমি সেখান থেকেই শুরু করতাম।">Automation is necessary because software moves too fast and carries too much risk to verify by hand alone. It pays for itself in speed, in coverage, and in the freedom it gives your people. Playwright earns its place because it makes reliable browser tests easier to write and far easier to debug than the tools that came before it. If you are starting a new suite today, I would begin there.</p>
+    </div>
+
+    <div id="relatedPosts" data-current="04"></div>
+
+    <div class="post-footer">
+      <p data-bn="লিখেছেন মানিক হোসেন, সফটওয়্যার QA ইঞ্জিনিয়ার।">Written by Manik Hossain, Software QA Engineer.</p>
+      <a href="../index.html#contact" class="btn btn-outline btn-small" data-bn="যোগাযোগ করুন">Get in touch</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="../index.html#top" class="logo">MH<span class="logo-dot">.</span></a>
+    <p class="footer-copy">&copy; <span id="year"></span> Manik Hossain. <span data-bn="সর্বস্বত্ব সংরক্ষিত।">All rights reserved.</span></p>
+    <div class="footer-socials">
+      <a href="https://github.com/ManikHossain27" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/manik27" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="mailto:manik.hossain2706@gmail.com" aria-label="Send email">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2.5 7.8 5.86L19.8 6H4.2zM20 8.24l-7.4 5.56a1 1 0 0 1-1.2 0L4 8.24V18.5c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V8.24z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/posts.js"></script>
+<script src="../js/related.js"></script>
+<script src="../js/script.js?v=3"></script>
+<script src="../js/theme.js?v=1"></script>
+<script src="../js/resume.js?v=1"></script>
+<script src="../js/i18n.js?v=2"></script>
+</body>
+</html>
